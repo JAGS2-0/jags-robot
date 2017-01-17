@@ -15,33 +15,30 @@ attr_reader :direction
         else
           @direction = "west"
         end
-    end
 
-    if @direction == "south"
+    elsif @direction == "south"
       if turn == "right"
         @direction = "west"
       else
         @direction = "east"
       end
-    end
 
-    if @direction == "east"
+    elsif @direction == "east"
       if turn == "right"
         @direction = "south"
       else
         @direction = "north"
       end
-    end
 
-    if @direction == "west"
+    else @direction == "west"
       if turn == "right"
         @direction = "north"
       else
         @direction = "south"
       end
     end
-
   end
+
 
   def move(n)
     n.to_i
