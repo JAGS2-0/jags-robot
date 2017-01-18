@@ -1,5 +1,7 @@
 class Robot
 attr_reader :direction
+attr_reader :x
+attr_reader :y
 
   def initialize(x, y, direction)
     @x = x.to_i
@@ -63,24 +65,42 @@ attr_reader :direction
     puts "I'm at #{@x}, #{@y}"
   end
 
+  def follow(coordinates) #'LLMM'
+    directions = coordinates.chars # [l, l, m, m,]
+    directions.map do |char|
+      if char == 'L'
+        'left'
+      elsif char == 'R'
+        'right'
+      else char == 'M'
+        'move'
+      end
+
+
+    # convert string 'LF' to 'left', 'Move(1)'
+
+    # l = left, r = right, m = move(1)
+
+  end
+
 end
 
-walley = Robot.new(0, 0, 'north')
-walley.turn('left')
-puts "I'm at direction #{walley.direction}"
-
-walley.turn('left')
-puts "I'm at direction #{walley.direction}"
-
-walley.move(1)
-puts "#{walley.position}"
-
-walley.move(1)
-puts "#{walley.position}"
-
-walley.turn('left')
-puts "I'm at direction #{walley.direction}"
-
-walley.move(1)
-puts "#{walley.position}"
+# walley = Robot.new(0, 0, 'north')
+# walley.turn('left')
+# puts "I'm at direction #{walley.direction}"
+#
+# walley.turn('left')
+# puts "I'm at direction #{walley.direction}"
+#
+# walley.move(1)
+# puts "#{walley.position}"
+#
+# walley.move(1)
+# puts "#{walley.position}"
+#
+# walley.turn('left')
+# puts "I'm at direction #{walley.direction}"
+#
+# walley.move(1)
+# puts "#{walley.position}"
 
